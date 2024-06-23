@@ -428,6 +428,10 @@ public class InsertionSort {
 - Insertion sort is used when the number of elements is small.
 - It can also be useful when the input array is almost sorted, and only a few elements are misplaced in a complete big array.
 
+
+![Click Here](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Java%20Sorting%20Algorithms.pdf)
+
+
 ### Time Complexity of Insertion Sort
 
 - Best case: O(n), If the list is already sorted, where n is the number of elements in the list.
