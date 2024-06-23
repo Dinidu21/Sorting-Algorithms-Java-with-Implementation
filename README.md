@@ -1,4 +1,4 @@
-# Java Sorting Algorithms
+# Java Sorting Algorithms ✅
 
 **Author:** Dinidu Sachintha  
 **Date:** 2024-05-15
