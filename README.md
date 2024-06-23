@@ -199,30 +199,30 @@ Imagine you have a list of numbers that you want to sort, for example: [29, 10, 
 - Find the minimum element from the list [29, 10, 14, 37, 13]. The minimum is 10.
 - Swap the minimum element (10) with the first element (29). The list now looks like: [10, 29, 14, 37, 13].
 
-[!Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525.png)
+  ![Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525.png)
 
 **Second Pass:**
 - Find the minimum element from the remaining unsorted list [29, 14, 37, 13]. The minimum is 13.
 - Swap the minimum element (13) with the second element (29). The list now looks like: [10, 13, 14, 37, 29].
 
-[!Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525(1).png)
+  ![Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525(1).png)
 
 **Third Pass:**
 - Find the minimum element from the remaining unsorted list [14, 37, 29]. The minimum is 14.
 - Swap the minimum element (14) with the third element (14). No change as it’s already in place. The list remains: [10, 13, 14, 37, 29].
 
-[!Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525(2).png)
+  ![Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525(2).png)
 
 **Fourth Pass:**
 - Find the minimum element from the remaining unsorted list [37, 29]. The minimum is 29.
 - Swap the minimum element (29) with the fourth element (37). The list now looks like: [10, 13, 14, 29, 37].
 
-[!Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525(3).png)
+  ![Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525(3).png)
 
 **Final Check:**
 - The list is now sorted: [10, 13, 14, 29, 37].
 
-[!Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525(4).png)
+  ![Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/Untitled-2024-05-15-1525(4).png)
 
 #### Practical Scenario
 
@@ -233,7 +233,7 @@ Consider you have a list of students' names and you want to sort them alphabetic
 
 #### Implementation of Selection Sort
 
-[!Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/codeimage-snippet_15.png)
+![Selection Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Selection%20Sort/codeimage-snippet_15.png)
 
 ```java
 public class SelectionSort {
@@ -284,3 +284,152 @@ public class SelectionSort {
 
 ---
 
+## 3.3 Insertion Sort
+
+Insertion Sort is an in-place comparison-based algorithm that builds the final sorted array one item at a time. It has a time complexity of O(n^2) in the average and worst cases, but it is efficient for small datasets or partially sorted lists.
+
+Insertion sort is a simple sorting algorithm that works by iteratively inserting each element of an unsorted list into its correct position in a sorted portion of the list. It is a stable sorting algorithm, meaning that elements with equal values maintain their relative order in the sorted output.
+
+### How does Insertion Sort Work without programming?
+
+Let us understand the working of Insertion sort with the help of the following illustration.
+
+#### Step-by-Step Process
+
+1. Initial Array:
+
+    ```plaintext
+    [12, 31, 25, 8, 32, 17]
+    ```
+![Insertion Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Insertion%20Sort/Untitled-2024-05-15-1525.png)
+
+
+2. First Iteration (index 1):
+    - Key = 31
+    - Compare 31 with 12. Since 31 is greater than 12, no shifting is needed.
+    - Array remains:
+
+![Insertion Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Insertion%20Sort/Untitled-2024-05-15-1525(1).png)
+
+    ```plaintext
+    [12, 31, 25, 8, 32, 17]
+    ```
+
+3. Second Iteration (index 2):
+    - Key = 25
+    - Compare 25 with 31. Since 25 is less than 31, shift 31 to the right.
+    - Compare 25 with 12. Since 25 is greater than 12, place 25 in the position after 12.
+    - Array becomes:
+
+![Insertion Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Insertion%20Sort/Untitled-2024-05-15-1525(2).png)
+
+    ```plaintext
+    [12, 25, 31, 8, 32, 17]
+    ```
+
+4. Third Iteration (index 3):
+    - Key = 8
+    - Compare 8 with 31. Since 8 is less than 31, shift 31 to the right.
+    - Compare 8 with 25. Since 8 is less than 25, shift 25 to the right.
+    - Compare 8 with 12. Since 8 is less than 12, shift 12 to the right.
+    - Place 8 in the position of the first element.
+    - Array becomes:
+
+![Insertion Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Insertion%20Sort/Untitled-2024-05-15-1525(3).png)
+
+    ```plaintext
+    [8, 12, 25, 31, 32, 17]
+    ```
+
+5. Fourth Iteration (index 4):
+    - Key = 32
+    - Compare 32 with 31. Since 32 is greater than 31, no shifting is needed.
+    - Array remains:
+
+![Insertion Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Insertion%20Sort/Untitled-2024-05-15-1525(4).png)
+
+    ```plaintext
+    [8, 12, 25, 31, 32, 17]
+    ```
+
+6. Fifth Iteration (index 5):
+    - Key = 17
+    - Compare 17 with 32. Since 17 is less than 32, shift 32 to the right.
+    - Compare 17 with 31. Since 17 is less than 31, shift 31 to the right.
+    - Compare 17 with 25. Since 17 is less than 25, shift 25 to the right.
+    - Compare 17 with 12. Since 17 is greater than 12, place 17 after 12.
+    - Array becomes:
+
+![Insertion Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Insertion%20Sort/Untitled-2024-05-15-1525(5).png)
+
+    ```plaintext
+    [8, 12, 17, 25, 31, 32]
+    ```
+
+7. Final Sorted Array:
+
+    ```plaintext
+    [8, 12, 17, 25, 31, 32]
+    ```
+![Insertion Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Insertion%20Sort/Untitled-2024-05-15-1525(6).png)
+
+### Practical Scenario
+
+Imagine a pile of shirts of various sizes.
+
+- You start by laying out the first shirt (consider it small). Then, you pick up another shirt.
+- If it's smaller than the first one, you move the first shirt aside to create space and place the smaller one in front.
+- You keep doing this, comparing each shirt to the already sorted pile and inserting it in the correct position (based on size) until all shirts are sorted from smallest to biggest.
+
+### Implementation of Insertion Sort
+
+![Insertion Sort](https://github.com/Dinidu21/Sorting-Algorithms-Java-with-Implementation/blob/main/Insertion%20Sort/codeimage-snippet_15.png)
+
+
+```java
+public class InsertionSort {
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {12, 31, 25, 8, 32, 17};
+        insertionSort(arr);
+        System.out.println("Sorted array: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+```
+
+### Advantages of Insertion Sort
+
+- Simple and easy to implement.
+- Stable sorting algorithm.
+- Efficient for small lists and nearly sorted lists.
+- Space-efficient.
+
+### Disadvantages of Insertion Sort
+
+- Inefficient for large lists.
+- Not as efficient as other sorting algorithms (e.g., merge sort, quick sort) for most cases.
+
+### When is the Insertion Sort algorithm used?
+
+- Insertion sort is used when the number of elements is small.
+- It can also be useful when the input array is almost sorted, and only a few elements are misplaced in a complete big array.
+
+### Time Complexity of Insertion Sort
+
+- Best case: O(n), If the list is already sorted, where n is the number of elements in the list.
+- Average case: O(n^2), If the list is randomly ordered.
+- Worst case: O(n^2), If the list is in reverse order.
